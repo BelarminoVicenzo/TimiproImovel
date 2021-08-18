@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Interfaces\IClienteImovelRepository.cs" />
     <Compile Include="Interfaces\IClienteRepository.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />
     <Compile Include="Interfaces\IImovelRepository.cs" />
@@ -67,6 +66,10 @@
     <Compile Include="Migrations\202108181626488_dropClienteImovelTable.cs" />
     <Compile Include="Migrations\202108181626488_dropClienteImovelTable.designer.cs">
       <DependentUpon>202108181626488_dropClienteImovelTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108181703215_addedImovelClienteRelationship.cs" />
+    <Compile Include="Migrations\202108181703215_addedImovelClienteRelationship.designer.cs">
+      <DependentUpon>202108181703215_addedImovelClienteRelationship.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108181626488_dropClienteImovelTable.resx">
       <DependentUpon>202108181626488_dropClienteImovelTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108181703215_addedImovelClienteRelationship.resx">
+      <DependentUpon>202108181703215_addedImovelClienteRelationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

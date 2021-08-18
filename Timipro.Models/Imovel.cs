@@ -6,8 +6,9 @@ namespace Timipro.Models
 
     public class Imovel
     {
-        
+
         [Key]
+        [ForeignKey(nameof(Cliente))]
         public int Id { get; set; }
 
         [Display(Name = "Descrição")]
@@ -23,6 +24,8 @@ namespace Timipro.Models
 
         [ForeignKey(nameof(IdTipoNegocio))]
         public virtual TipoNegocio Genre { get; set; }
+ 
+        public virtual Cliente Cliente { get; set; }
     }
 
 

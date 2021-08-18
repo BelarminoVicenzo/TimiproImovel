@@ -24,6 +24,7 @@ namespace Timipro.Models
         public string Email { get; set; }
 
         public bool Ativo { get; set; }
+
     }
 
 
