@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimiproImovel", "TimeproWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timipro.Models", "Timipro.Models\Timipro.Models.csproj", "{E989E3DD-4B66-49AB-91FB-D9A6207CEF72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timipro.DataAccess", "..\Timipro.DataAccess\Timipro.DataAccess.csproj", "{087EBD8D-4502-4608-B247-5074DD64FEE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timipro.DataAccess", "Timipro.DataAccess\Timipro.DataAccess.csproj", "{087EBD8D-4502-4608-B247-5074DD64FEE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
