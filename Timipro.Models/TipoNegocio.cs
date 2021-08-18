@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TimiProImovel.Models
+namespace Timipro.Models
 {
     public class TipoNegocio
     {

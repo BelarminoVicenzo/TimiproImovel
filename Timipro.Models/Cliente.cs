@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TimiProImovel.Models
+namespace Timipro.Models
 {
 
     public class Cliente
