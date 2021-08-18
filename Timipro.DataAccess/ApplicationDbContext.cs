@@ -16,7 +16,7 @@ namespace Timipro.DataAccess
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Imovel> Imovel { get; set; }
         public DbSet<TipoNegocio> TipoNegocio { get; set; }
-        public DbSet<ClienteImovel> ClienteImovel { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
