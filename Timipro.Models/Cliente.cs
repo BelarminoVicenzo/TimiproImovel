@@ -10,7 +10,9 @@ namespace Timipro.Models
         [Key]
         public int Id { get; set; }
 
+        [Required]
         [StringLength(11)]
+        [Index(IsUnique = true)]
         public string CPF { get; set; }
 
         [Required]
