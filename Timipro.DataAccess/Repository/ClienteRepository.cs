@@ -22,13 +22,14 @@ namespace Timipro.DataAccess.Repository
         }
         public async Task<int> Update(Cliente entity)
         {
-            _context.Entry(entity).State = EntityState.Added;
-            _context.SaveChanges();
+            _context.Entry(entity).State = EntityState.Modified;
+            
             return await _context.SaveChangesAsync();
         }
 
         public async Task<int> Delete(Cliente entity)
         {
+            _context.Cliente.Attach(entity);
             _context.Cliente.Remove(entity);
             return await _context.SaveChangesAsync();
         }
