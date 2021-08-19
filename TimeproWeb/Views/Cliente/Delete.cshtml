@@ -1,0 +1,62 @@
+﻿@model Timipro.Models.Cliente
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+ 
+
+<h3>De certeza que pretende eliminar estes dados?</h3>
+<div>
+    
+    
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.Nome) : @Html.DisplayFor(model => model.Nome)
+
+        </legend>
+
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.CPF) : @Html.DisplayFor(model => model.CPF)
+
+        </legend>
+
+    </fieldset>
+
+
+
+
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.Email) : @Html.DisplayFor(model => model.Email)
+
+        </legend>
+
+    </fieldset>
+
+
+
+
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.Ativo) : @Html.DisplayFor(model => model.Ativo)
+
+        </legend>
+
+    </fieldset>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    @*@Html.ActionLink("Voltar", "Details", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-default" }) |*@
+    <input type="submit" value="Eliminar" class="btn btn-danger" />
+</div>
+    }
+</div>
