@@ -12,10 +12,10 @@ namespace TimiproImovel.Controllers
 {
     public class ClienteController : Controller
     {
-        private ClienteService _clienteService;
+        private IClienteService _clienteService;
        
 
-        public ClienteController(ClienteService clienteService)
+        public ClienteController(IClienteService clienteService)
         {
             _clienteService = clienteService;
                   }
