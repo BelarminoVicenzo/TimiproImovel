@@ -22,7 +22,7 @@ namespace Timipro.Models
         [Index(IsUnique = true)]
         [MaxLength(80)]
         public string Email { get; set; }
-
+        [Display(Name ="Estado")]
         public bool Ativo { get; set; }
 
     }
