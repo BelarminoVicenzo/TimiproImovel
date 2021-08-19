@@ -23,7 +23,7 @@ namespace Timipro.Models
 
 
         [ForeignKey(nameof(IdTipoNegocio))]
-        public virtual TipoNegocio Genre { get; set; }
+        public virtual TipoNegocio TipoNegocio { get; set; }
  
         public virtual Cliente Cliente { get; set; }
     }
