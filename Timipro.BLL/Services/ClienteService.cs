@@ -32,8 +32,8 @@ namespace Timipro.BLL.Services
 
         public async Task<Cliente> Get(int id)
         {
-            var genre = await _repo.Get(id);
-            if (genre != null) return genre;
+            var cliente = await _repo.Get(id);
+            if (cliente != null) return cliente;
             else return new Cliente();
         }
 
