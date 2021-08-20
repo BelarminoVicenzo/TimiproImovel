@@ -55,6 +55,11 @@ namespace TimiproImovel
             var container = new UnityContainer();
             container.RegisterType<IClienteRepository, ClienteRepository>();
             container.RegisterType<IClienteService, ClienteService>();
+            container.RegisterType<IImovelRepository, ImovelRepository>();
+            container.RegisterType<IImovelService, ImovelService>();
+            
+            container.RegisterType<ITipoNegocioRepository, TipoNegocioRepository>();
+            container.RegisterType<ITipoNegocioService, TipoNegocioService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
