@@ -1,0 +1,63 @@
+﻿@model Timipro.Models.Imovel
+
+@{
+    ViewBag.Title = "Detalhes do imóvel";
+}
+ 
+<div>
+    <br />
+    <h4>Dados do Imóvel</h4>
+    <hr />
+
+
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.Descricao) : @Html.DisplayFor(model => model.Descricao)
+
+        </legend>
+
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.Valor) : @Html.DisplayFor(model => model.Valor)
+
+        </legend>
+
+    </fieldset>
+
+     
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.TipoNegocio) : @Html.DisplayFor(model => model.TipoNegocio.Tipo)
+
+        </legend>
+
+    </fieldset>
+
+
+    <fieldset>
+        <legend>
+            @Html.DisplayName("	Cliente atribuído") : @Html.DisplayFor(model => model.Cliente.Email)
+
+        </legend>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.Ativo) : @Html.DisplayFor(model => model.Ativo)
+
+        </legend>
+
+    </fieldset>
+  
+</div>
+<p>
+
+    @Html.ActionLink("Ver lista", "Index") |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Eliminar", "Delete", new { id = Model.Id })
+</p>

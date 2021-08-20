@@ -1,0 +1,67 @@
+﻿@model Timipro.Models.Imovel
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+ 
+
+
+<h3>De certeza que pretende eliminar estes dados?</h3>
+<div>
+
+
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.Descricao) : @Html.DisplayFor(model => model.Descricao)
+
+        </legend>
+
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.Valor) : @Html.DisplayFor(model => model.Valor)
+
+        </legend>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.TipoNegocio) : @Html.DisplayFor(model => model.TipoNegocio.Tipo)
+
+        </legend>
+
+    </fieldset>
+
+    
+    <fieldset>
+        <legend>
+            @Html.DisplayName("	Cliente atribuído") : @Html.DisplayFor(model => model.Cliente.Email)
+
+        </legend>
+    </fieldset>
+
+        <fieldset>
+            <legend>
+                @Html.DisplayNameFor(model => model.Ativo) : @Html.DisplayFor(model => model.Ativo)
+
+            </legend>
+
+        </fieldset>
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                @*@Html.ActionLink("Back to List", "Index")*@
+                @Html.ActionLink("Voltar", "Details", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-default" }) |
+                <input type="submit" value="Eliminar" class="btn btn-danger" />
+            </div>
+        }
+</div>
