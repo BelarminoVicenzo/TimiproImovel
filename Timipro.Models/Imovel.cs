@@ -16,7 +16,8 @@ namespace Timipro.Models
 
         [Required]
         public float Valor { get; set; }
-
+        
+        [Display(Name = "Estado")]
         public bool Ativo { get; set; }
 
         public int IdTipoNegocio { get; set; }
