@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\ImovelService.cs" />
+    <Compile Include="Services\TipoNegocioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Timipro.DataAccess\Timipro.DataAccess.csproj">
