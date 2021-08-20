@@ -8,10 +8,10 @@ namespace Timipro.Models
     {
 
         [Key]
-        [ForeignKey(nameof(Cliente))]
         public int Id { get; set; }
 
         [Display(Name = "Descrição")]
+        [StringLength(30)]
         public string Descricao { get; set; }
 
         [Required]
@@ -20,11 +20,16 @@ namespace Timipro.Models
         public bool Ativo { get; set; }
 
         public int IdTipoNegocio { get; set; }
+        
+        [Index(IsUnique =true)]
+        public int IdCliente { get; set; }
 
 
         [ForeignKey(nameof(IdTipoNegocio))]
         public virtual TipoNegocio TipoNegocio { get; set; }
+        
  
+        [ForeignKey(nameof(IdCliente))]
         public virtual Cliente Cliente { get; set; }
     }
 
