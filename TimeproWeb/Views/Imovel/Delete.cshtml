@@ -4,7 +4,7 @@
     ViewBag.Title = "Eliminar";
 }
 
- 
+
 
 
 <h3>De certeza que pretende eliminar estes dados?</h3>
@@ -37,31 +37,52 @@
 
     </fieldset>
 
-    
+
     <fieldset>
         <legend>
-            @Html.DisplayName("	Cliente atribuído") : @Html.DisplayFor(model => model.Cliente.Email)
+            @Html.DisplayName("Cliente atribuído") : @{
+                var email = Model.Cliente.Email;
+                if (email == "clienteinicial@timiproimovel.com")
+                {
+
+                    <label>Sem cliente atribuído</label>
+                }
+                else
+                {
+
+                    @Html.DisplayFor(model => model.Cliente.Email)
+                }
+            }
 
         </legend>
     </fieldset>
 
-        <fieldset>
-            <legend>
-                @Html.DisplayNameFor(model => model.Ativo) : @Html.DisplayFor(model => model.Ativo)
+    <fieldset>
+        <legend>
+            @Html.DisplayNameFor(model => model.Ativo) : @Html.DisplayFor(model => model.Ativo)
 
-            </legend>
+        </legend>
 
-        </fieldset>
+    </fieldset>
 
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
-                @*@Html.ActionLink("Back to List", "Index")*@
-                @Html.ActionLink("Voltar", "Details", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-default" }) |
+        <div class="form-actions no-color">
+            @*@Html.ActionLink("Back to List", "Index")*@
+            @Html.ActionLink("Voltar", "Details", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-default" }) |
+            @if (Model.Cliente.Email != "clienteinicial@timiproimovel.com")
+            {
+                <input type="button" value="Registo não pode ser eliminado" class="btn btn-warning disabled" />
+
+            }
+            else
+            {
+
                 <input type="submit" value="Eliminar" class="btn btn-danger" />
-            </div>
-        }
+            }
+        </div>
+    }
 </div>

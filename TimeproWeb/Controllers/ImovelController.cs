@@ -71,8 +71,8 @@ namespace TimiproImovel.Controllers
 
                     for (int j = 0; j < allowedCliente.Count; j++)
                     {
-                        //remove the ones that already have an association
-                        if (allowedCliente[j].Id == idClientes[i])
+                        //remove the ones that already have an association except initializer cliente
+                        if (allowedCliente[j].Id == idClientes[i] && allowedCliente[j].Email!= "clienteinicial@timiproimovel.com")
                         {
                             allowedCliente.RemoveAt(j);
                         }
@@ -89,7 +89,9 @@ namespace TimiproImovel.Controllers
                     for (int j = 0; j < allowedCliente.Count; j++)
                     {
                         //almost the same as above, but preserve a chosen record
-                        if (allowedCliente[j].Id == idClientes[i] && allowedCliente[j].Id != recordToBeKept.Id)
+                        if (allowedCliente[j].Id == idClientes[i] 
+                            && allowedCliente[j].Email!= "clienteinicial@timiproimovel.com"
+                            && allowedCliente[j].Id != recordToBeKept.Id)
                         {
                             allowedCliente.RemoveAt(j);
                         }

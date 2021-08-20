@@ -43,7 +43,20 @@
         </td>
         
         <td>
-            @Html.DisplayFor(modelItem => item.Cliente.Email)
+            @{
+                var email = item.Cliente.Email;
+                if (email == "clienteinicial@timiproimovel.com")
+                {
+
+                    <label>Sem cliente atribuído</label>
+                }
+                else
+                {
+
+                    @Html.DisplayFor(modelItem => item.Cliente.Email)
+                }
+            }
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Ativo)

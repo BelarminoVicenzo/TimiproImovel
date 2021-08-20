@@ -40,7 +40,19 @@
 
     <fieldset>
         <legend>
-            @Html.DisplayName("	Cliente atribuído") : @Html.DisplayFor(model => model.Cliente.Email)
+            @Html.DisplayName("Cliente atribuído") : @{
+                var email = Model.Cliente.Email;
+                if (email == "clienteinicial@timiproimovel.com")
+                {
+
+                    <label>Sem cliente atribuído</label>
+                }
+                else
+                {
+
+                    @Html.DisplayFor(model => model.Cliente.Email)
+                }
+            }
 
         </legend>
 
