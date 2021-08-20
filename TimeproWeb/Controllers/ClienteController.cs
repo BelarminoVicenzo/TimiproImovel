@@ -73,7 +73,7 @@ namespace TimiproImovel.Controllers
             {
 
                 await _clienteService.Update(cliente);
-                return RedirectToAction("Index");
+                return RedirectToAction($"Details/{cliente.Id}");
             }
             catch (Exception ex)
             {
