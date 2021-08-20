@@ -22,7 +22,7 @@ namespace Timipro.Models
 
         public int IdTipoNegocio { get; set; }
         
-        [Index(IsUnique =true)]
+        
         public int IdCliente { get; set; }
 
 
