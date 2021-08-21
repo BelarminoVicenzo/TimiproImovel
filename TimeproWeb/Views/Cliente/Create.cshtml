@@ -5,12 +5,12 @@
 }
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-       
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -47,9 +47,13 @@
             </div>
         </div>
 
+
+
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Criar novo" class="btn btn-default" />
+                <span class="field-validation-valid text-danger" id="errorMessage"></span><br />
+                <input type="submit" value="Criar novo" id="btnCreate" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -58,3 +62,69 @@
 <div>
     @Html.ActionLink("Ver lista", "Index")
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+
+            let isDuplicate = false;
+
+            $("#CPF").on('change', function () {
+                let cpf = $("#CPF").val();
+                let btnCreate = document.querySelector("#btnCreate");
+
+                $.ajax({
+                    url: 'VerifyCPF/' + cpf,
+                    type: 'GET',
+                    success: function (response) {
+                         isDuplicate = (response === "True");
+                        if (isDuplicate === true) {
+                            $("#errorMessage").text('Duplicated CPF');
+                            btnCreate.disabled = true;
+                        } else {
+                            $("#errorMessage").text('');
+                            btnCreate.disabled = false;
+                        }
+
+                    },
+
+                });
+
+            });
+
+
+
+            $("#Email").on('change', function () {
+                let email = $("#Email").val();
+                let btnCreate = document.querySelector("#btnCreate");
+
+                $.ajax({
+                    url: 'VerifyEmail?id=' + email,
+                    type: 'GET',
+                    success: function (response) {
+                         isDuplicate = (response === "True");
+                        if (isDuplicate === true) {
+                            $("#errorMessage").text('Duplicated email');
+                            btnCreate.disabled = true;
+                        } else {
+                            $("#errorMessage").text('');
+                            btnCreate.disabled = false;
+                        }
+
+
+                    },
+
+                });
+
+            });
+
+
+
+        });
+    </script>
+}

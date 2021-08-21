@@ -44,6 +44,15 @@ namespace Timipro.DataAccess.Repository
         {
             return await _context.Cliente.ToListAsync();
         }
+        
+        public async Task<bool> IsCPFExistant(string cpf)
+        {
+            return await _context.Cliente.AnyAsync(a => a.CPF == cpf);
+        }
+         public async Task<bool> IsEmailExistant(string email)
+        {
+            return await _context.Cliente.AnyAsync(a => a.Email == email);
+        }
 
     }
 }

@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using Timipro.DataAccess.Interfaces;
 using Timipro.Models;
 
 namespace Timipro.BLL.Services
 {
 
-   
+
     public interface IClienteService
     {
         Task<int> Create(Cliente entity);
@@ -14,12 +15,15 @@ namespace Timipro.BLL.Services
         Task<Cliente> Get(int id);
         Task<List<Cliente>> GetAll();
         Task<int> Update(Cliente entity);
+        Task<bool> IsCPFExistant(string cpf);
+        Task<bool> IsEmailExistant(string email);
+
     }
 
     public class ClienteService : IClienteService
     {
         IClienteRepository _repo;
-        
+
         public ClienteService(IClienteRepository repo)
         {
             _repo = repo;
@@ -53,6 +57,14 @@ namespace Timipro.BLL.Services
             return await _repo.Delete(entity);
         }
 
+        public async Task<bool> IsCPFExistant(string cpf)
+        {
+            return await _repo.IsCPFExistant(cpf);
+        }
+        public async Task<bool> IsEmailExistant(string email)
+        {
+            return await _repo.IsEmailExistant(email);
+        }
 
     }
 }

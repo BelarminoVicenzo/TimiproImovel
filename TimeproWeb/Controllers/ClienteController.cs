@@ -34,7 +34,12 @@ namespace TimiproImovel.Controllers
         }
 
 
-        
+
+        public async Task <bool> VerifyCPF(string id) => await _clienteService.IsCPFExistant(id);
+        public async Task<bool> VerifyEmail(string id) => await _clienteService.IsEmailExistant(id);
+
+
+
         public ActionResult Create()
         {
             return View();
@@ -49,7 +54,9 @@ namespace TimiproImovel.Controllers
             {
                 await _clienteService.Create(cliente);
 
+                //return RedirectToAction("Index");
                 return RedirectToAction("Index");
+                
             }
             catch
             {
